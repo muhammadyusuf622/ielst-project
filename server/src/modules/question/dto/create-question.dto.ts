@@ -2,9 +2,9 @@ import { ApiProperty } from "@nestjs/swagger";
 import { IsString } from "class-validator";
 
 export class CreateQuestionDto {
-  @ApiProperty({ type: 'string', example: 'categoryId', required: true })
+  @ApiProperty({ type: 'string', example: 'category name', required: true })
   @IsString()
-  categoryId: string;
+  categoryName: string;
   @ApiProperty({ type: 'string', example: 'question', required: true })
   @IsString()
   text: string;

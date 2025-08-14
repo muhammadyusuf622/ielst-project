@@ -53,8 +53,6 @@ export class AdminService implements OnModuleInit {
 
     res.cookie('token', token, {
       httpOnly: true,
-      secure: false,
-      sameSite: 'lax',
       maxAge: 1000 * 60 * 60 * 24 * 1,
     });
 

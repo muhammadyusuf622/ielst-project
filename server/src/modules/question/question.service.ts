@@ -22,12 +22,9 @@ export class QuestionService {
   }
 
   async create(payload: CreateQuestionDto) {
-    if (!isUUID(payload.categoryId)) {
-      throw new BadRequestException('category id error');
-    }
 
-    const foundCategory = await this.prisma.category.findUnique({
-      where: { id: payload.categoryId },
+    const foundCategory = await this.prisma.category.findFirst({
+      where: { name: payload.categoryName },
     });
 
     if (!foundCategory) {
@@ -35,12 +32,12 @@ export class QuestionService {
     }
 
     const orderCount = await this.prisma.question.count({
-      where: { categoryId: payload.categoryId },
+      where: { categoryId: foundCategory.id },
     });
 
     const data = await this.prisma.question.create({
       data: {
-        categoryId: payload.categoryId,
+        categoryId: foundCategory.id,
         text: payload.text,
         optionA: payload.optionA,
         optionB: payload.optionB,
