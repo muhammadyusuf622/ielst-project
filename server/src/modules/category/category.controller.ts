@@ -12,31 +12,31 @@ export class CategoryController {
   @Get()
   @Protected(false)
   @Roles([UserRoles.User])
-  findAll() {
-    return this.categoryService.findAll();
+  async findAll() {
+    return await this.categoryService.findAll();
   }
 
   @Post()
   @Protected(true)
   @Roles([UserRoles.Admin])
-  create(@Body() createCategoryDto: CreateCategoryDto) {
-    return this.categoryService.create(createCategoryDto);
+  async create(@Body() createCategoryDto: CreateCategoryDto) {
+    return await this.categoryService.create(createCategoryDto);
   }
 
   @Patch(':id')
   @Protected(true)
   @Roles([UserRoles.Admin])
-  update(
+  async update(
     @Param('id') id: string,
     @Body() updateCategoryDto: UpdateCategoryDto,
   ) {
-    return this.categoryService.update(id, updateCategoryDto);
+    return await this.categoryService.update(id, updateCategoryDto);
   }
 
   @Delete(':id')
   @Protected(true)
   @Roles([UserRoles.Admin])
-  remove(@Param('id') id: string) {
-    return this.categoryService.remove(id);
+  async remove(@Param('id') id: string) {
+    return await this.categoryService.remove(id);
   }
 }

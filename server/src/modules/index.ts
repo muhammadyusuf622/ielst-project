@@ -1,2 +1,3 @@
 export * from "./admin";
-export * from "./questions";
+export * from "./category";
+export * from "./question";
