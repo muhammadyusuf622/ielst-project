@@ -1,4 +1,4 @@
-# Quiz App (Nest.js + React.js)
+# IELST TEST (Nest.js + React.js)
 
 ## 📌 Maqsad
 Ushbu loyiha foydalanuvchilarga turli kategoriyalar bo‘yicha test savollarini ishlash imkonini beradi. Har bir kategoriya o‘ziga xos savollarga ega, foydalanuvchi javob variantini tanlaydi va yakunda natijasini ko‘radi. Loyiha vaqt cheklovi (timer) va avtomatik savol almashish funksiyalariga ega.
